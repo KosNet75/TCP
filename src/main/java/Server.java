@@ -12,12 +12,12 @@ public class Server {
 
   public static void main(String[] args) {
 
-    try (ServerSocket serverSocket = new ServerSocket(8080);) {
+    try (ServerSocket serverSocket = new ServerSocket(8080)) {
       System.out.println("Сервер запущен!");
       while (true) {
         try (Socket socket = serverSocket.accept();
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            PrintWriter out = new PrintWriter(socket.getOutputStream());) {
+            PrintWriter out = new PrintWriter(socket.getOutputStream())) {
           char backChar = 0;
           if (text == null) {
             out.write("Введите название города:" + "\n");
